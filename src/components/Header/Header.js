@@ -3,7 +3,8 @@ import react from 'react';
 
 
 const Header = () =>{
-    console.log('placeholder');
-}
+    return(
+    null
+    )}
 
 export default Header;
