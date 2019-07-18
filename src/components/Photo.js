@@ -1,32 +1,38 @@
-import React from 'react';
-import styled from 'styled-components';
-import { segment, Segment } from 'semantic-ui-react';
-
-export const InfoBox = () => (
-    <Segment.Group raised>
-        <Segment>NavBar</Segment>
-        <Segment>Context</Segment>
-    </Segment.Group>
-)
+import React from "react";
+import styled from "styled-components";
+import { Segment, Container, Header } from "semantic-ui-react";
+import NavBar from "./NavBar.js";
 
 
-const StyledHeading = styled.h1`
+
+
+
+const Title = styled.h1`
+    font-size: 4em;
+    text-align: center;
     `;
-function Photo(props) {
-    return(
-        <div>
-            <h1>{props.title}</h1>
-            <img src={props.url} alt='space' />
 
-            <p>
-                <NavBar />
-                {props.explanation}
-            </p>
-            <footer>
-                {props.copyright}
-            </footer>
-        </div>
-    );
+function Photo(props) {
+  return (
+    <div>
+      <Title>{props.title}</Title>
+      <img src={props.url} alt="space" />
+      <Segment.Group raised>
+      <Segment><NavBar /></Segment>
+        <Segment>
+            <Container text>
+            <Header as='h2'>Context:</Header>
+        <p>
+        {props.explanation}  
+        </p>
+        <p>
+        {props.copyright}
+        </p>
+        </Container>
+        </Segment>
+  </Segment.Group>    
+    </div>
+  );
 }
 
 export default Photo;
