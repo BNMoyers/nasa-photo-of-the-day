@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Segment, Container, Header } from "semantic-ui-react";
 import NavBar from "./NavBar.js";
 
-
+import "../App.css";
 
 
 
@@ -17,17 +17,15 @@ function Photo(props) {
     <div>
       <Title>{props.title}</Title>
       <img src={props.url} alt="space" />
-      <Segment.Group raised>
-      <Segment><NavBar /></Segment>
+      <Segment.Group className = 'groupSegment' raised>
+      <Segment className = 'navBar'><NavBar /></Segment>
         <Segment>
-            <Container text>
+            <Container className = 'infoContainer' text>
             <Header as='h2'>Context:</Header>
-        <p>
+        
         {props.explanation}  
-        </p>
-        <p>
         {props.copyright}
-        </p>
+        
         </Container>
         </Segment>
   </Segment.Group>    
