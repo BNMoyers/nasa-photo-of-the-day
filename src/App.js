@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Photo from './components/Photo.js';
 import axios from 'axios';
+import styled from 'styled-components';
 
 function App() {
   const [data, setData] = useState({});
