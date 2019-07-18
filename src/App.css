@@ -31,3 +31,19 @@
     transform: rotate(360deg);
   }
 }
+
+.groupSegment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 50px;
+  
+}
+
+.infoContainer{
+  padding: 0px 20px;
+}
