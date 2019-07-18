@@ -1,25 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Header from './components/Header/Header.js';
-import SpacePic from './components/NASA/Nasa.js';
-import Info from './components/Info/Info.js';
-import Footer from './components/Footer/Footer.js';
+import Photo from './components/Photo.js';
+import axios from 'axios';
 
 function App() {
+  const [data, setData] = useState({});
+  useEffect(() =>{
+    axios
+  .get("https://api.nasa.gov/planetary/apod?api_key=5J8sSFxqzi1RluTKdZsfnDxZ1QRVBN7dmtorVc4d")
+  .then(res => setData(res.data))
+  .catch(err => console.log(err))
+}, []);
+
   return (
     <div className="App">
-     <header>
-       <Header />
-     </header>
-     <container className='pic-of-the-day'>
-       <SpacePic />
-       <Info />
-     </container>
-     <footer>
-       <Footer />
-     </footer>
-
+     {data
+     ? <Photo title={data.title}
+            url={data.url}
+            explanation={data.explanation}
+            date={data.date}
+            copyright={data.copyright} />:
+            <div>Loading</div>}
+   
     </div>
+    
   );
 }
 
